@@ -1,0 +1,104 @@
+<odoo>
+  <data>
+
+    <!--Form View Document-->
+     <record id="view_document_form" model="ir.ui.view">
+            <field name="name">Document Form</field>
+            <field name="model">doc.doc</field>
+            <field name="arch" type="xml">
+                <form class="o_form_document">
+                    <sheet>
+                       <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <label for="description" class="oe_edit_only"/>
+                        <field name="description"/>
+                        <separator/>
+                        <group>
+                          <group>
+                                <field name="created_date" />
+                                <field name="created_by" />
+                          </group>
+                        </group>
+                      </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                    </form>
+                  </field>
+                </record>
+
+      <!--List View Document-->
+       <record id="view_list_document_form" model="ir.ui.view">
+            <field name="name">Document List</field>
+            <field name="model">doc.doc</field>
+            <field name="arch" type="xml">
+              <tree>
+                <field name="name"/>
+                <field name="created_by"/>
+                <field name="created_date"/>
+                <field name="write_uid"/>
+              </tree>
+            </field>
+          </record>
+
+  <!--Kanban Form view-->
+  <record model="ir.ui.view" id="doc_kanban_view">
+            <field name="name">doc.kanban</field>
+            <field name="model">doc.doc</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_document">
+                   <field name="name"/>
+                   <field name="description"/>
+                   <templates>
+                    <t t-name="kanban-box">
+                      <div t-attf-class="oe_kanban_content">
+                                    <div class="o_kanban_image">
+                                        <a>
+                                           
+                                            <img src="/doc/static/description/document.png"/>
+                                        </a>
+                                    </div>
+
+                                    <div class="o_dropdown_kanban dropdown">
+                                      <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
+                                        <span class="fa fa-bars fa-lg"/>
+                                      </a>
+                                   <ul class="dropdown-menu" role="menu">
+                                        <li><a type="open">Open</a></li>
+                                        <t t-if="widget.editable">
+                                            <li><a type="edit">Edit</a></li>
+                                            <li><a type="delete">Delete</a></li>
+                                            <li><ul widget="color"/></li>
+                                        </t>
+                                    </ul>
+                                   </div>
+
+                                    <div class="oe_kanban_details">
+                                        <ul>
+                                            <li>
+                                                <a type="open" t-att-title="record.name.value">
+                                                    <strong><t t-esc="record.name.value"/></strong>
+                                                </a>
+                                            </li>
+                                            <li t-if="record.description.value">
+                                                <t t-esc="record.description.value" />
+                                            </li>
+                                        </ul>
+                                    </div>
+                                     
+                      </div>
+                       
+                    </t>
+                  </templates>
+                </kanban>
+            </field>
+        </record>
+  </data>
+</odoo>

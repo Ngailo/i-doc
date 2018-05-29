@@ -1,0 +1,13 @@
+<odoo>
+	<data> 
+		<!-- Action For Menu-->
+		  <record id="action_document_open" model="ir.actions.act_window">
+            <field name="name">Documents</field>
+            <field name="res_model">doc.doc</field>
+            <field name="view_mode">tree,form,kanban</field>
+          </record>
+
+          <!-- Top Menu-->
+          <menuitem action="action_document_open" name="DMS" id="doc.menu_top"/>
+	</data>
+</odoo>
