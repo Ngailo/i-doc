@@ -2,6 +2,7 @@
 
 from odoo import models, fields, api, exceptions
 
+
 class Doc(models.Model):
 	_name = 'doc.doc'
 	_description = 'Document'
@@ -26,8 +27,12 @@ class Doc(models.Model):
 
 		('name_unique',
 		 'UNIQUE(name)',
-		 "The folder name must be unique!!! "),
+		 "The folder name is already exist!!! "),
 	]
+
+
+
+
 
 	
 
