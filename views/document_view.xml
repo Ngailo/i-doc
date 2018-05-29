@@ -43,7 +43,7 @@
                     <field name="name"/>
                     <field name="created_by"/>
                     <field name="created_date"/>
-                    <field name="write_uid"/>
+                    <field name="create_uid"/>
                 </tree>
             </field>
        </record>
