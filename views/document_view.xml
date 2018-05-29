@@ -40,6 +40,7 @@
             <field name="model">doc.doc</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="sequence" widget="handle"/>
                     <field name="name"/>
                     <field name="created_by"/>
                     <field name="created_date"/>
