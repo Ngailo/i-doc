@@ -39,14 +39,14 @@
             <field name="name">Document List</field>
             <field name="model">doc.doc</field>
             <field name="arch" type="xml">
-              <tree>
-                <field name="name"/>
-                <field name="created_by"/>
-                <field name="created_date"/>
-                <field name="write_uid"/>
-              </tree>
+                <tree>
+                    <field name="name"/>
+                    <field name="created_by"/>
+                    <field name="created_date"/>
+                    <field name="write_uid"/>
+                </tree>
             </field>
-          </record>
+       </record>
 
   <!--Kanban Form view-->
   <record model="ir.ui.view" id="doc_kanban_view">
@@ -55,22 +55,21 @@
             <field name="type">kanban</field>
             <field name="arch" type="xml">
                 <kanban class="o_kanban_document">
-                   <field name="name"/>
-                   <field name="description"/>
-                   <templates>
-                    <t t-name="kanban-box">
-                      <div t-attf-class="oe_kanban_content">
-                                    <div class="o_kanban_image">
-                                        <a>
-                                            <img src="/doc/static/description/document.png"/>
-                                        </a>
-                                    </div>
-
-                                    <div class="o_dropdown_kanban dropdown">
-                                      <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
+                    <field name="name"/>
+                    <field name="description"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_content">
+                                <div class="o_kanban_image">
+                                    <a>
+                                        <img src="/doc/static/description/document.png"/>
+                                    </a>
+                                </div>
+                                <div class="o_dropdown_kanban dropdown">
+                                    <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
                                         <span class="fa fa-bars fa-lg"/>
-                                      </a>
-                                   <ul class="dropdown-menu" role="menu">
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
                                         <li><a type="open">Open</a></li>
                                         <t t-if="widget.editable">
                                             <li><a type="edit">Edit</a></li>
@@ -79,22 +78,21 @@
                                         </t>
                                     </ul>
                                    </div>
-
-                                    <div class="oe_kanban_details">
-                                        <ul>
-                                            <li>
-                                                <a type="open" t-att-title="record.name.value">
-                                                    <strong><t t-esc="record.name.value"/></strong>
-                                                </a>
-                                            </li>
-                                            <li t-if="record.description.value">
-                                                <t t-esc="record.description.value" />
-                                            </li>
-                                        </ul>
-                                    </div>
-                      </div>
-                    </t>
-                  </templates>
+                                <div class="oe_kanban_details">
+                                    <ul>
+                                        <li>
+                                            <a type="open" t-att-title="record.name.value">
+                                                <strong><t t-esc="record.name.value"/></strong>
+                                            </a>
+                                        </li>
+                                        <li t-if="record.description.value">
+                                            <t t-esc="record.description.value" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
                 </kanban>
             </field>
         </record>
