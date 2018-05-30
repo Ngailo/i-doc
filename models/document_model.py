@@ -19,7 +19,7 @@ class Doc(models.Model):
 	created_by = fields.Char('Created By')
 	color = fields.Integer()
 	sequence = fields.Integer(default=0)
-	name_count = fields.Integer(string="Number of Folder", compute="_get_name_count")
+
 
 	_sql_constraints = [
 		('name_description_check',
@@ -31,10 +31,6 @@ class Doc(models.Model):
 		 "The folder name is already exist!!! "),
 	]
 
-	@api.depends('name')
-	def _get_name_count(self):
-		for r in self:
-			r.name_count = len(r.name)
 
 
 
