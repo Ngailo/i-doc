@@ -11,7 +11,7 @@
     'depends': ['base', 'mail'],
     'data': [
         #'security/account_security.xml',
-        #'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         #'views/webclient_templates.xml',
         'views/document_view.xml',
         'views/menu.xml'
