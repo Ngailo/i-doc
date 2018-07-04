@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import document_model
+from . import doc

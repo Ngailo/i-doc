@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_doc_doc,doc.doc,model_doc_doc,,1,1,1,1
+access_dms_dms,dms.dms,model_dms_dms,,1,0,0,0

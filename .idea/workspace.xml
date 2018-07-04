@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3aaaa17d-e956-47b8-9be3-6ca56301cfc7" name="Default" comment="" />
+    <list default="true" id="a3ff9525-f107-4677-bfb0-6bd092681cd6" name="Default" comment="" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,10 +13,10 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <created>1527576920005</created>
+      <created>1530689388696</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1527576920005</updated>
+      <updated>1530689388696</updated>
     </task>
     <servers />
   </component>

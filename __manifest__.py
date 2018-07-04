@@ -1,22 +1,37 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Document Management System",
-    'summary': "document management",
-    'description': """Saving Document
+    'name': "DMS",
+
+    'summary': """
+        Saving Document""",
+
+    'description': """
+        Manage Document
     """,
+
     'author': "Invention Technologies",
-    'website': "www.it.co.tz",
-    'category': 'Document Management',
-    'version': '1.0',
+    'website': "http://www.it.co.tz",
+
+    # Categories can be used to filter modules in modules listing
+    # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
+    # for the full list
+    'category': 'document',
+    'version': '0.1',
+
+    # any module necessary for this one to work correctly
     'depends': ['base', 'mail'],
+
+    # always loaded
     'data': [
-        #'security/account_security.xml',
-        'security/ir.model.access.csv',
-        #'views/webclient_templates.xml',
-        'views/document_view.xml',
-        'views/menu.xml'
+        # 'security/ir.model.access.csv',
+        'views/doc.xml',
+        'views/doc_menu.xml',
+        'views/doc_kanban.xml',
+        'views/templates.xml',
     ],
-    'installable': True,
-    'auto_install': False,
-    'application': True,
+    # only loaded in demonstration mode
+    'demo': [
+        'demo/demo.xml',
+    ],
+    'application': True
 }
